@@ -28,7 +28,7 @@ def load_data5():
 	return df_heatmap
 @st.cache(allow_output_mutation=True)
 def load_data6():
-	dfall=pd.read_csv('dfall.CSV')
+	dfall=pd.read_csv('dfall.csv')
 	return dfall
 
 #This is Arps equation turned into a function
