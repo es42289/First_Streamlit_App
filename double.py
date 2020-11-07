@@ -7,7 +7,7 @@ st.image('Logo.png',width=500)
 #this caches the data so each interaction doesnt require reloading the data set
 @st.cache
 def load_data():
-    df = pd.read_csv('MB_latest_prd Producing Entity Monthly Production.csv')
+    df = pd.read_csv('MB_latest_prd Producing Entity Monthly Production.CSV')
     return df
 @st.cache(allow_output_mutation=True)
 def load_data2():
