@@ -7,19 +7,19 @@ st.image('Logo.png',width=500)
 #this caches the data so each interaction doesnt require reloading the data set
 @st.cache
 def load_data():
-    df = pd.read_csv('C:/Users/Elii/Desktop/Working/X Oil/Monument Butte/app/MB_latest_prd Producing Entity Monthly Production.csv')
+    df = pd.read_csv('MB_latest_prd Producing Entity Monthly Production.csv')
     return df
 @st.cache(allow_output_mutation=True)
 def load_data2():
-	df_params=pd.read_csv('//192.168.0.136/Surtek_Operations/01 X Oil/07 Target Assets/Uinta Basin/Monument Butte/MB_DCA_parameters_per_Well.csv')
+	df_params=pd.read_csv('MB_DCA_parameters_per_Well.csv')
 	return df_params
 @st.cache(allow_output_mutation=True)
 def load_data3():
-	df_headers=pd.read_csv('C:/Users/Elii/Desktop/Working/X Oil/Monument Butte/app/MB_latest_prd Production Headers.csv')
+	df_headers=pd.read_csv('MB_latest_prd Production Headers.csv')
 	return df_headers
 @st.cache(allow_output_mutation=True)
 def load_data4():
-	df_elio_base=pd.read_excel('C:/Users/Elii/Desktop/Working/X Oil/Monument Butte/app/MB_Elio.xlsx',sheet_name='BaseCase')
+	df_elio_base=pd.read_excel('MB_Elio.xlsx',sheet_name='BaseCase')
 	df_elio_base['Monthly']=df_elio_base['Exp Rate']*30.44
 	return df_elio_base
 @st.cache(allow_output_mutation=True)
@@ -61,7 +61,7 @@ def main():
 	if page == "Full Field":
 		#give a title to the page that is the well name
 		st.header('Monument Butte Full Field Production')
-		df = pd.read_csv('C:/Users/Elii/Desktop/Working/X Oil/Monument Butte/app/MB_latest_prd Producing Entity Monthly Production.csv')
+		df = pd.read_csv('MB_latest_prd Producing Entity Monthly Production.csv')
 		#subset the data to only use singel well data
 		df_sub=df.groupby('Monthly Production Date').sum().reset_index()
 		df_sub['Monthly Production Date']=pd.to_datetime(df_sub['Monthly Production Date'])
@@ -160,7 +160,7 @@ def main():
 		cols[0].plotly_chart(fig3)
 
 		if cols[1].button('Export data to Monument Butte Folder in Operations Drive'):
-			df_summary.to_csv('//192.168.0.136/Surtek_Operations/01 X Oil/07 Target Assets/Uinta Basin/Monument Butte/MB_DCA.csv')
+			df_summary.to_csv('MB_DCA.csv')
 		else:
 			pass
 
@@ -276,7 +276,7 @@ def main():
 		# cols[0].write(df_params)
 		
 		if st.button('Save Decline Parameters'):
-			df_params.to_csv('//192.168.0.136/Surtek_Operations/01 X Oil/07 Target Assets/Uinta Basin/Monument Butte/MB_DCA_parameters_per_Well.csv')
+			df_params.to_csv('MB_DCA_parameters_per_Well.csv')
 		else:
 			pass
 
