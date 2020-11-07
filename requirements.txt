@@ -3,3 +3,4 @@ numpy==1.18.5
 streamlit==0.69.2
 pandas==1.0.5
 python_dateutil==2.8.1
+xlrd >= 1.0.0
