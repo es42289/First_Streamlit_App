@@ -356,7 +356,7 @@ def main():
 		st.write('\*Tooltip shows the calculated spacing in acres\*')
 		st.write('\*Bubble sized by acres ')
 		# df_heatmap=pd.read_csv('MB Well Headers.csv')
-		dfall=pd.read_csv('dfall.CSV')
+		dfall=pd.read_csv('dfall.csv')
 		df=df_heatmap_wells
 		dfall=dfall.sort_values('Dist.', ascending=False)
 		df=df[(df['Well Status']!='P & A')& (df['Well Status']!='CANCELLED')]
