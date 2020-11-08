@@ -200,7 +200,7 @@ def main():
 		# cols[1].text_input('NRI, %',80)
 
 	if page == "Individual Wells":
-		df = pd.read_csv('C:/Users/Elii/Desktop/Working/X Oil/Monument Butte/app/MB_latest_prd Producing Entity Monthly Production.csv')
+		df = pd.read_csv('MB_latest_prd Producing Entity Monthly Production.CSV')
 		#Create a sidebar that allows for cycling through each well
 		well = st.selectbox("Choose a well", df['API/UWI'].unique())
 		#give a title to the page that is the well name
