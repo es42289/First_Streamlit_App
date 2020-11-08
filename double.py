@@ -61,7 +61,7 @@ def main():
 	if page == "Full Field":
 		#give a title to the page that is the well name
 		st.header('Monument Butte Full Field Production')
-		df = pd.read_csv('MB_latest_prd Producing Entity Monthly Production.csv')
+		df = pd.read_csv('MB_latest_prd Producing Entity Monthly Production.CSV')
 		#subset the data to only use singel well data
 		df_sub=df.groupby('Monthly Production Date').sum().reset_index()
 		df_sub['Monthly Production Date']=pd.to_datetime(df_sub['Monthly Production Date'])
